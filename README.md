@@ -1,3 +1,5 @@
 # Basic-C-Code
-Link List code only..
-Linear,circular,doubly linkedlist
+LinkList
+ *DoublyLinkedList
+ *CircularLinkedList
+Binary_Search
