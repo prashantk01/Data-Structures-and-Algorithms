@@ -12,7 +12,7 @@ void take_input(int *a,int n){
 
 void max_sum(int *a,int n){
     int s[n];
-    int max_sm=0;
+    int max_sm=a[0];
     s[0]=a[0];
     for (int i=1;i<n;i++){
     s[i]=max(s[i-1]+a[i],a[i]);
