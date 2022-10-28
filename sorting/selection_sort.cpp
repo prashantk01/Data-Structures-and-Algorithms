@@ -1,7 +1,14 @@
+/*
+*Algo:
+*Find the minimum element in the unsorted array and swap it with the element at the beginning.
+*The inner loop selects the minimum element in the unsorted array .
+* T(n) -> O(n^2)
+image.png
+*/
+
 #include<iostream>
 #include<stdio.h>
-#include<conio.h>
-
+#include<bits/stdc++.h>
 using namespace std;
 
 void display(int a[], int n){

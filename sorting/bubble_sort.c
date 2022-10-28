@@ -3,7 +3,6 @@
 
 
 /*
-* 
 Algo: 
 *Repeatedly swap 2 adjacent elements if arr[j] > arr[j+1] .
 *The maximum element of the unsorted array reaches the end of the unsorted array after each iteration.

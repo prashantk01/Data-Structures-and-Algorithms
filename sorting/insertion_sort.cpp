@@ -1,16 +1,14 @@
 #include<iostream>
+#include<bits/stdc++.h>
 #include<stdio.h>
 #include<stdlib.h>
 using namespace std;
-void take_input(int *a,intnikl n){
-
+void take_input(int *a,int n){
     for (int i =0; i<n; i++)
         cin>>a[i];
-
 }
 
 void display(int a[], int n){
-
     for (int i=0;i < n; i++)
         cout<<a[i]<<" ";
 }
