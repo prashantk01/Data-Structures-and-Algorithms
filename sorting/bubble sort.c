@@ -1,6 +1,15 @@
 //modified version of bubble sort
 //o(n) for best case by using flag
 
+
+/*
+* 
+Algo: 
+*Repeatedly swap 2 adjacent elements if arr[j] > arr[j+1] .
+*The maximum element of the unsorted array reaches the end of the unsorted array after each iteration.
+*After (N-1) iterations , we get a sorted array.
+*/
+
 #include<stdlib.h>
 #include<stdio.h>
 void bubble_sort(int a[],int n){
