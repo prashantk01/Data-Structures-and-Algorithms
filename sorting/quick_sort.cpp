@@ -1,6 +1,4 @@
-#include<iostream>
-#include<stdlib.h>
-#include<stdio.h>
+#include<bits/stdc++.h>
 using namespace std;
 
 void take_input(int *a,int n){
@@ -30,8 +28,7 @@ int find_partition(int a[],int le,int re){
         if( left_iterator < right_iterator )
             swap(a[left_iterator],a[right_iterator]);  //swapping with inbuilt function
     }
-    a[le]=a[right_iterator];
-    a[right_iterator]=pivot_ele;
+    swap(a[le], a[right_iterator]);
     return right_iterator;
 }
 
@@ -57,5 +54,6 @@ int main(){
     quick_sort(arr,0,n-1);
     cout<<"\nTHE SORTED ARRAY IS: ";
     display(arr,n);
+    cout << endl;
     return 0;
 }
