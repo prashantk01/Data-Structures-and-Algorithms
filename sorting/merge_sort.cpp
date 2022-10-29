@@ -1,9 +1,6 @@
-#include<iostream>
-#include<stdlib.h>
-#include<stdio.h>
-#include<conio.h>
-
+#include<bits/stdc++.h>
 using namespace std;
+
 int iteration=0,d_and_c=0;
 
 void take_input(int *a,int n){
@@ -22,33 +19,37 @@ void display(int a[], int n){
 int merge_array(int a[], int l_index, int mid,int r_end, int n){
 
     int temp[n];
-    int l_end=mid;
     int r_index=mid+1;
     int temp_index=l_index;
     int i=l_index;
     int counter=0;
-    while( l_index <= l_end && r_index <= r_end ){
-        if(a[l_index] < a[r_index]){
+    while( l_index <= mid && r_index <= r_end ){
+
+        if(a[l_index] < a[r_index])
             temp[temp_index++]=a[l_index++];
-        }
-        else{
+
+        else
             temp[temp_index++]=a[r_index++];
-        }
+
         counter++;
     }
-    while(l_index <= l_end){
+
+    while(l_index <= mid){
         temp[temp_index++]=a[l_index++];
         counter++;
     }
+
     while(r_index <= r_end){
         temp[temp_index++]=a[r_index++];
         counter++;
     }
-    for(int k=i;k<i+counter;k++){
+
+    for(int k=i;k<=r_end;k++)
         a[k]=temp[k];
-    }
+        
     cout<<"\nARRAY AT MERGING STEP "<<iteration++<<" IS: ";
     display(a,n);
+  
 }
 
  void merge_sort(int a[],int l_index, int r_index, int n){
@@ -78,6 +79,7 @@ int main(){
     cout<<"\nTOTAL STEPS INVOLVED IS: "<<d_and_c+iteration+2;
     cout<<"\nTHE SORTED ARRAY IS: ";
     display(arr,n);
+    cout << endl;
     return 0;
 
 }

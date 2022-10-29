@@ -5,12 +5,12 @@ Place it in its corresponding position in the sorted part.
 Shift the remaining elements accordingly.
 In this approach, start iterating the “outer for loop”  from the 2nd position of the array.
 The “inner while loop” shifts the elements using swapping.
+to watch out steps for algo: https://takeuforward.org/data-structure/insertion-sort-algorithm/
 */
-#include<iostream>
+
 #include<bits/stdc++.h>
-#include<stdio.h>
-#include<stdlib.h>
 using namespace std;
+
 void take_input(int *a,int n){
     for (int i =0; i<n; i++)
         cin>>a[i];
@@ -47,6 +47,7 @@ int main(){
     display(arr,n);
     insertion_sort(arr,n);
     cout<<"\nTHE SORTED ARRAY IS: ";
-    display(arr,n);
+    display(arr, n);
+    cout<<endl;
     return 0;
 }
