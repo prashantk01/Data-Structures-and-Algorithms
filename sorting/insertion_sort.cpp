@@ -1,3 +1,11 @@
+/*
+Approach: 
+Take an element from the unsorted array.
+Place it in its corresponding position in the sorted part.
+Shift the remaining elements accordingly.
+In this approach, start iterating the “outer for loop”  from the 2nd position of the array.
+The “inner while loop” shifts the elements using swapping.
+*/
 #include<iostream>
 #include<bits/stdc++.h>
 #include<stdio.h>
@@ -17,13 +25,14 @@ void display(int a[], int n){
 void insertion_sort(int a[], int n){
     //left part is sorted
     for(int i=1;i<n;i++){
-       int  val=a[i];
-       int  j=i;
-        while(a[j-1] > val &&j>=1 ){
-            a[j]=a[j-1];
+       int  val=a[i]; // current element
+       int  j=i-1;
+        while(a[j] > val && j>=0 ){  // keep checking current element with left sorted array
+            a[j+1]=a[j];
             j--;
         }
-        a[j]=val;
+        // once location is found, replace with current picked element from unsorted array
+        a[j+1]=val;
     }
 }
 
