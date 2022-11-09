@@ -15,9 +15,7 @@ void display(int a[], int n){
 }
 
 int find_partition(int a[],int le,int re){
-
-    int part_index=le;
-    int pivot_ele=a[le]; // left most value is considered as pivot element
+    int pivot_ele=a[le]; // left most value is considered as pivot element  now place this element inplace
     int left_iterator=le;
     int right_iterator=re;
     while( left_iterator < right_iterator ){

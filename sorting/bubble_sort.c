@@ -1,5 +1,6 @@
 //modified version of bubble sort
 //o(n) for best case by using flag
+// place max element at its position with every iteration
 
 
 /*

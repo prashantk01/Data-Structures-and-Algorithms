@@ -28,7 +28,7 @@ void insertion_sort(int a[], int n){
        int  val=a[i]; // current element
        int  j=i-1;
         while(a[j] > val && j>=0 ){  // keep checking current element with left sorted array
-            a[j+1]=a[j];
+            a[j+1]=a[j]; // right shifting of sorted array
             j--;
         }
         // once location is found, replace with current picked element from unsorted array
