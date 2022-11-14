@@ -15,19 +15,24 @@ void display(int a[], int n){
 }
 
 int find_partition(int a[],int le,int re){
-    int pivot_ele=a[le]; // left most value is considered as pivot element  now place this element inplace
+    // update below two variables [pivot_ele, pivot_idx] as per your pivot last or first
+    int pivot_ele=a[re]; // left most value is considered as pivot element  now place this element inplace
+    int pivot_idx = re;  // pivot element current index
     int left_iterator=le;
     int right_iterator=re;
     while( left_iterator < right_iterator ){
-        while( pivot_ele >= a[left_iterator] )
+        while( pivot_ele >= a[left_iterator]  && left_iterator < re)
             left_iterator++;
-        while( pivot_ele < a[right_iterator] )
+        while( pivot_ele <= a[right_iterator] && right_iterator > le)
             right_iterator--;
         if( left_iterator < right_iterator )
             swap(a[left_iterator],a[right_iterator]);  //swapping with inbuilt function
     }
-    swap(a[le], a[right_iterator]);
-    return right_iterator;
+    int swap_idx;
+    if(pivot_idx == re) swap_idx = left_iterator;
+    else swap_idx = right_iterator;
+    swap(a[pivot_idx], a[swap_idx]);
+    return swap_idx;
 }
 
  void quick_sort(int a[], int le, int re){
