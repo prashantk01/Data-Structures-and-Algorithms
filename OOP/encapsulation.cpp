@@ -26,6 +26,6 @@ int main()
     A a;
     // cout << a.n; // will throw error as it is private
     a.set(5);
-    cout <<"ele is: "<<a.get();
+    cout <<"element in class A is: "<<a.get();
     return 0;
 }
