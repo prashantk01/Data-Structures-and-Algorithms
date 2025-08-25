@@ -1,0 +1,26 @@
+// output for unique pointer code
+Parameterized constructor of base class called with value: 10
+Data: 10
+ptr1 is now null after move.
+Data: 10
+Destructor of base class called
+Unique pointer out of scope, destructor should have been called.
+
+
+// output for shared pointer code
+Parameterized constructor of base class called with value: 20
+Data: 20
+Reference count after copying ptr1 to ptr2: 2
+Data: 20
+Reference count after ptr2 goes out of scope: 1
+Destructor of base class called
+Shared pointer out of scope, destructor should have been called.
+
+
+// output for weak pointer code
+Parameterized constructor of base class called with value: 30
+Reference count after creating weak_ptr: 1
+Data: 30
+Reference count after locking weak_ptr: 2
+Destructor of base class called
+Weak pointer out of scope, destructor should have been called.
