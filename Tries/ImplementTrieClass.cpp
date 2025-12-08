@@ -5,7 +5,7 @@
 // common operations are insert, search and delete
 
 #include<iostream>
-
+using namespace std;
 struct Node {
     Node* children[26] = {nullptr};// a-z
     int countEndWith = 0; // count of words ending at this node
@@ -126,4 +126,6 @@ class Trie{
     }
 };
 
-
+int main(){
+    return 0;
+}
