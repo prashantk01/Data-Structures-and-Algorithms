@@ -1,15 +1,27 @@
-#include<iostream>
-class base {
-    public:
-    void display(){
+#include <iostream>
+class base
+{
+public:
+    virtual ~base()
+    {
+        std::cout << "virtual destructor works in sequence" << std::endl;
+    }
+    void display()
+    {
         std::cout << "base class display function called" << std::endl;
     }
     virtual void foo() = 0; // pure virtual function, makes this class abstract
 };
 
-class child: public base{
-    public:
-    void foo(){
+class child : public base
+{
+public:
+    ~child()
+    {
+        std::cout << "child class destructor called" << std::endl;
+    }
+    void foo() override
+    {
         std::cout << "child class foo function called" << std::endl;
     }
 };
@@ -30,5 +42,5 @@ int main()
 // They can have pure virtual functions (functions with =0) which must be overridden in derived classes.
 // Abstract classes can have regular member functions as well.
 // We can create pointers of abstract classes and use them to point to derived class objects.
-// Abstract classes are used to define interfaces in C++.
+// Abstract classes are used to define interfaces in C++ (all methods have to be pure virtual).
 // Hides implementation details and shows only essential features of the object which is useful in reducing complexity and increasing efficiency.
