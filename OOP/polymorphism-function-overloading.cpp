@@ -1,5 +1,7 @@
 #include <iostream>
 // Compile time polymmorphism - Function overloading
+// return type does not matter in function overloading, only the number and type of parameters matter for function signature
+
 class Base
 {
 private:
