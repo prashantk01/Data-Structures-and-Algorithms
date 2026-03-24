@@ -21,7 +21,9 @@ std::pair<std::string, std::string> getKeyValue(const std::string &line)
 
 int main()
 {
-    std::ifstream itr("input.txt"); // RAII based file handling
+    std::ifstream itr("http_input.txt");
+    std::ofstream out("parsed_output.txt");
+
     if (!itr)
     {
         std::cout << "file does not exist!!" << std::endl;
@@ -38,14 +40,19 @@ int main()
     std::cout << "Path: " << path << std::endl;
     std::cout << "Version: " << version << std::endl;
 
-    // 2. Process Key value headers and body content
+    out << "Method " << method << " " << "Path " << path << " " << "Version " << version << std::endl;
+
+    // 2. Process Key value headers
     int content_length = 0;
     while (getline(itr, line))
     {
         if (line.empty())
             break;
         if (line == "{" || line == "}")
+        {
+            out << line << std::endl;
             continue;
+        }
         auto [key, value] = getKeyValue(line);
         if (!key.size() || !value.size())
         {
@@ -53,12 +60,12 @@ int main()
             return -1;
         }
         std::cout << key << ": " << value << std::endl;
+        out << key << ": " << value << std::endl;
         if (key == "Content-Length")
         {
             content_length = stoi(value);
             std::cout << "Content Body: " << std::endl;
         }
     }
-    // std::cout << line << std::endl;
     return 0;
 }
