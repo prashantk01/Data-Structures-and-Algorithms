@@ -1,0 +1,10 @@
+POST /api/v1/send-sms HTTP/1.1
+Host: api.messaging-service.com
+Authorization: Basic dXNlcm5hbWU6cGFzc3dvcmQ=
+Content-Type: application/json
+Content-Length: 105
+{
+  "to": "+15551234567",
+  "from": "+15557654321",
+  "body": "Hello World! This is a test message."
+}
