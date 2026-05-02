@@ -1,5 +1,9 @@
 #include <iostream>
 
+// no except specifier is used to indicate that a function does not throw any exceptions.
+// If a function is marked as noexcept and it does throw an exception, the program will call std::terminate() and crash.
+// This is useful for optimization, as the compiler can make certain assumptions about the function's behavior and generate more efficient code.
+// compiler does not create exception handling code for functions marked as noexcept, which can lead to faster execution and smaller binary size.
 void func1() noexcept { std::cout << "No exception\n"; }
 void func2() { std::cout << "May throw\n"; }
 void func3() noexcept
